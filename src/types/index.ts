@@ -13,6 +13,8 @@ export type AppPropsWithLayout = AppProps & {
 }
 
 export type TPostStatus = "Private" | "Public" | "PublicOnDetail"
+// TODO: notion 상의 컬럼 type을 "선택"에서 "상태"로 변경
+export type TPostWriteStatus = "Not Started" | "In Progress" | "Done"
 export type TPostType = "Post" | "Paper" | "Page"
 
 export type TPost = {
@@ -29,8 +31,10 @@ export type TPost = {
     profile_photo?: string
   }[]
   title: string
-  status: TPostStatus[]
+  post_status: TPostStatus[]
+  write_status: TPostWriteStatus[]
   createdTime: string
+  updatedTime: string
   fullWidth: boolean
   thumbnail?: string
 }
